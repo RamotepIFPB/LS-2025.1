@@ -70,7 +70,7 @@ countryCodes.forEach((code, index) => {
   img.src = `flags/${code}.svg`;
   img.alt = `${countryName} flag`;
   img.onerror = () => {
-    figure.remove(); // Remove se imagem não for encontrada
+    figure.remove(); 
   };
 
   const caption = document.createElement('figcaption');
