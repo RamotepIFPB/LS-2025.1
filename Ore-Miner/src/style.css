@@ -1,0 +1,19 @@
+h1 {
+  text-align: center;
+  margin-top: 20px; /* Distância do topo, opcional */
+  color: white;
+}
+
+h2 {
+  color: white;
+  margin-top: 80px;
+  max-width: 50%;
+  margin: 0 auto;          /* Centraliza horizontalmente */
+  text-align: justify;     /* (opcional) deixa o texto justificado */
+  line-height: 1.6;        /* Melhora a leitura */
+}
+
+body {
+  background-color: rgb(27, 27, 27);
+}
+
