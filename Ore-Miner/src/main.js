@@ -19,6 +19,16 @@ const observado = new Proxy(estado, {
   }
 });
 
+const botao = document.getElementById("start");
+const description = document.getElementById("description");
+
+botao.addEventListener("click", function () {
+  description.style.display = "none";
+  setTimeout(function () {
+    description.style.display = "block";
+  }, 10000)
+});
+
 // Testando:
 observado.porta = true;  // 👉 "A porta está aberta"
 observado.porta = false; // 👉 "A porta está fechada"
