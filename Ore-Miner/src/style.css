@@ -4,7 +4,7 @@ h1 {
   color: white;
 }
 
-h2 {
+#description {
   color: white;
   margin-top: 80px;
   max-width: 50%;
@@ -13,7 +13,28 @@ h2 {
   line-height: 1.6;        /* Melhora a leitura */
 }
 
+#highscore {
+  color: white;
+  margin-top: 150px;  
+  text-align: center;     
+  line-height: 1.6;
+}
+
 body {
   background-color: rgb(27, 27, 27);
 }
 
+#start {
+  background-color: rgb(218, 211, 211); /* Cor de fundo */
+  color: black; /* Cor do texto */
+  padding: 10px 20px; /* Espaçamento interno */
+  border: none; /* Remove borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de mão ao passar o mouse */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+}
+
+#start:hover {
+  background-color: rgb(114, 110, 110)
+}
