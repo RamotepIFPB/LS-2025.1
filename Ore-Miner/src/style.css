@@ -20,6 +20,14 @@ h1 {
   line-height: 1.6;
 }
 
+#score {
+  color: white;
+  margin-top: 150px;  
+  text-align: center;     
+  line-height: 1.6;
+  display: block;
+}
+
 body {
   background-color: rgb(27, 27, 27);
 }
@@ -37,4 +45,24 @@ body {
 
 #start:hover {
   background-color: rgb(114, 110, 110)
+}
+
+#minerio {
+  background: none;
+  width: 250px;
+  display: none;
+  /* border: none; */
+}
+
+#minerio img {
+  background: none;
+  width: 250px;
+  display: none;
+  /* border: none; */
+}
+
+#div-minerio {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }
