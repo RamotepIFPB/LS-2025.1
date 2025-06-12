@@ -46,12 +46,27 @@ botao.addEventListener("click", function () {
   }, 10000)
 });
 
+let animationTimeout;
+
 minerio.addEventListener("click", function () {
-  scorenumber = scorenumber + 10
+  scorenumber = scorenumber + 10;
   score.textContent = "SCORE: " + scorenumber;
-  console.log(scorenumber)
+  console.log(scorenumber);
+  minerio_img.classList.remove('shake');
+
+  requestAnimationFrame(() => {
+    minerio_img.classList.add('shake');
+  });
+
+  clearTimeout(animationTimeout);
+  animationTimeout = setTimeout(function () {
+    minerio_img.classList.remove('shake');
+  }, 500);
 })
 
 // Testando:
 observado.refresh = true;  // 👉 "A porta está aberta"
 observado.refresh = false; // 👉 "A porta está fechada"
+
+const randomNumber = Math.floor(Math.random() * 5) + 1;
+console.log(randomNumber);
