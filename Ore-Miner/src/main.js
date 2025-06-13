@@ -22,6 +22,14 @@ const observado = new Proxy(estado, {
 const botao = document.getElementById("start");
 const description = document.getElementById("description");
 const highscore = document.getElementById("highscore");
+if (!localStorage.getItem('highscore')) {
+  localStorage.setItem('highscore', 0);
+  highscore.textContent = "HIGHSCORE: " + 0;
+} else {
+  let highscore_achado = Number(localStorage.getItem('highscore'));
+  highscore.textContent = "HIGHSCORE: " + highscore_achado
+}
+let playerhighscore = Number(localStorage.getItem('highscore'));
 const minerio = document.getElementById("minerio");
 const minerio_img = document.querySelector("#minerio img");
 const score = document.getElementById("score")
@@ -116,9 +124,13 @@ botao.addEventListener("click", function () {
     lj_pc2.style.display = "none";
     lj_pc3.style.display = "none";
 
+    if (scorenumber > playerhighscore) {
+      localStorage.setItem('highscore', scorenumber);
+      highscore.textContent = "HIGHSCORE: " + scorenumber
+    }
     scorenumber = 0
     score.textContent = "SCORE: " + scorenumber;
-  }, 10000)
+  }, 180000)
 });
 
 let animationTimeout;
@@ -141,37 +153,80 @@ minerio.addEventListener("click", function () {
       const preço = Number(valor_minerios.filter((elemento, indice) => indice == 2));
       scorenumber = scorenumber + preço
     }
-    const ore = Math.floor(Math.random() * 5) + 1;
-    if (ore == 1) {
-      minerio_img.src = "../images/iron.png";
-      minerio_atual = "ferro"
-      const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
-      HP = Math.ceil(durabilidade / speed_upgrades)
+    if (luck_upgrades == 1) {
+      const ore = Math.floor(Math.random() * 5) + 1;
+      if (ore == 1) {
+        minerio_img.src = "../images/iron.png";
+        minerio_atual = "ferro"
+        const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
+        HP = Math.ceil(durabilidade / speed_upgrades)
+      }
+      if (ore == 2) {
+        minerio_img.src = "../images/coal.png";
+        minerio_atual = "carvao"
+        const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 1));
+        HP = Math.ceil(durabilidade / speed_upgrades)
+      }
+      if (ore == 3) {
+        minerio_img.src = "../images/rock.png";
+        minerio_atual = "pedra"
+        const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 0));
+        HP = Math.ceil(durabilidade / speed_upgrades)
+      }
+      if (ore == 4) {
+        minerio_img.src = "../images/rock.png";
+        minerio_atual = "pedra"
+        const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 0));
+        HP = Math.ceil(durabilidade / speed_upgrades)
+      }
+      if (ore == 5) {
+        minerio_img.src = "../images/rock.png";
+        minerio_atual = "pedra"
+        const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 0));
+        HP = Math.ceil(durabilidade / speed_upgrades)
+      }
+    } else if (luck_upgrades == 2) {
+        const ore = Math.floor(Math.random() * 10) + 1;
+        if (ore < 5) {
+          minerio_img.src = "../images/rock.png";
+          minerio_atual = "pedra"
+          const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
+          HP = Math.ceil(durabilidade / speed_upgrades)
+        } else {
+            if (ore < 9) {
+            minerio_img.src = "../images/coal.png";
+            minerio_atual = "carvao"
+            const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
+            HP = Math.ceil(durabilidade / speed_upgrades)
+          } else {
+            minerio_img.src = "../images/iron.png";
+            minerio_atual = "ferro"
+            const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
+            HP = Math.ceil(durabilidade / speed_upgrades)
+          }
+        }
+    } else {
+      const ore = Math.floor(Math.random() * 20) + 1;
+        if (ore < 5) {
+          minerio_img.src = "../images/rock.png";
+          minerio_atual = "pedra"
+          const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
+          HP = Math.ceil(durabilidade / speed_upgrades)
+        } else {
+            if (ore < 13) {
+            minerio_img.src = "../images/coal.png";
+            minerio_atual = "carvao"
+            const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
+            HP = Math.ceil(durabilidade / speed_upgrades)
+          } else {
+            minerio_img.src = "../images/iron.png";
+            minerio_atual = "ferro"
+            const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
+            HP = Math.ceil(durabilidade / speed_upgrades)
+          }
+        }
     }
-    if (ore == 2) {
-      minerio_img.src = "../images/coal.png";
-      minerio_atual = "carvao"
-      const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 1));
-      HP = Math.ceil(durabilidade / speed_upgrades)
-    }
-    if (ore == 3) {
-      minerio_img.src = "../images/rock.png";
-      minerio_atual = "pedra"
-      const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 0));
-      HP = Math.ceil(durabilidade / speed_upgrades)
-    }
-    if (ore == 4) {
-      minerio_img.src = "../images/rock.png";
-      minerio_atual = "pedra"
-      const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 0));
-      HP = Math.ceil(durabilidade / speed_upgrades)
-    }
-    if (ore == 5) {
-      minerio_img.src = "../images/rock.png";
-      minerio_atual = "pedra"
-      const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 0));
-      HP = Math.ceil(durabilidade / speed_upgrades)
-    }
+
   }
   score.textContent = "SCORE: " + scorenumber;
   console.log(scorenumber);
@@ -181,7 +236,7 @@ minerio.addEventListener("click", function () {
     minerio_img.classList.add('shake');
   });
 
-  const ore = Math.floor(Math.random() * 5) + 1;
+  console.log(HP)
 
   clearTimeout(animationTimeout);
   animationTimeout = setTimeout(function () {
