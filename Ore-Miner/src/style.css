@@ -101,7 +101,7 @@ body {
   background: none;
   width: 250px;
   display: none;
-  /* border: none; */
+  border: none; 
 }
 
 #minerio img {
