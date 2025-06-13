@@ -156,31 +156,31 @@ minerio.addEventListener("click", function () {
     if (luck_upgrades == 1) {
       const ore = Math.floor(Math.random() * 5) + 1;
       if (ore == 1) {
-        minerio_img.src = "../images/iron.png";
+        minerio_img.src = "../Ore-Miner/images/iron.png";
         minerio_atual = "ferro"
         const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
         HP = Math.ceil(durabilidade / speed_upgrades)
       }
       if (ore == 2) {
-        minerio_img.src = "../images/coal.png";
+        minerio_img.src = "../Ore-Miner/images/coal.png";
         minerio_atual = "carvao"
         const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 1));
         HP = Math.ceil(durabilidade / speed_upgrades)
       }
       if (ore == 3) {
-        minerio_img.src = "../images/rock.png";
+        minerio_img.src = "../Ore-Miner/images/rock.png";
         minerio_atual = "pedra"
         const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 0));
         HP = Math.ceil(durabilidade / speed_upgrades)
       }
       if (ore == 4) {
-        minerio_img.src = "../images/rock.png";
+        minerio_img.src = "../Ore-Miner/images/rock.png";
         minerio_atual = "pedra"
         const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 0));
         HP = Math.ceil(durabilidade / speed_upgrades)
       }
       if (ore == 5) {
-        minerio_img.src = "../images/rock.png";
+        minerio_img.src = "../Ore-Miner/images/rock.png";
         minerio_atual = "pedra"
         const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 0));
         HP = Math.ceil(durabilidade / speed_upgrades)
@@ -188,18 +188,18 @@ minerio.addEventListener("click", function () {
     } else if (luck_upgrades == 2) {
         const ore = Math.floor(Math.random() * 10) + 1;
         if (ore < 5) {
-          minerio_img.src = "../images/rock.png";
+          minerio_img.src = "../Ore-Miner/images/rock.png";
           minerio_atual = "pedra"
           const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
           HP = Math.ceil(durabilidade / speed_upgrades)
         } else {
             if (ore < 9) {
-            minerio_img.src = "../images/coal.png";
+            minerio_img.src = "../Ore-Miner/images/coal.png";
             minerio_atual = "carvao"
             const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
             HP = Math.ceil(durabilidade / speed_upgrades)
           } else {
-            minerio_img.src = "../images/iron.png";
+            minerio_img.src = "../Ore-Miner/images/iron.png";
             minerio_atual = "ferro"
             const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
             HP = Math.ceil(durabilidade / speed_upgrades)
@@ -208,18 +208,18 @@ minerio.addEventListener("click", function () {
     } else {
       const ore = Math.floor(Math.random() * 20) + 1;
         if (ore < 5) {
-          minerio_img.src = "../images/rock.png";
+          minerio_img.src = "../Ore-Miner/images/rock.png";
           minerio_atual = "pedra"
           const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
           HP = Math.ceil(durabilidade / speed_upgrades)
         } else {
             if (ore < 13) {
-            minerio_img.src = "../images/coal.png";
+            minerio_img.src = "../Ore-Miner/images/coal.png";
             minerio_atual = "carvao"
             const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
             HP = Math.ceil(durabilidade / speed_upgrades)
           } else {
-            minerio_img.src = "../images/iron.png";
+            minerio_img.src = "../Ore-Miner/images/iron.png";
             minerio_atual = "ferro"
             const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
             HP = Math.ceil(durabilidade / speed_upgrades)
