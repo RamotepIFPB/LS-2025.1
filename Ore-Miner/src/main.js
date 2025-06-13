@@ -58,6 +58,23 @@ minerio.addEventListener("click", function () {
     minerio_img.classList.add('shake');
   });
 
+  const ore = Math.floor(Math.random() * 5) + 1;
+  if (ore == 1) {
+    minerio_img.src = "../images/iron.png"
+  }
+  if (ore == 2) {
+    minerio_img.src = "../images/coal.png"
+  }
+  if (ore == 3) {
+    minerio_img.src = "../images/rock.png"
+  }
+  if (ore == 4) {
+    minerio_img.src = "../images/rock.png"
+  }
+  if (ore == 5) {
+    minerio_img.src = "../images/rock.png"
+  }
+
   clearTimeout(animationTimeout);
   animationTimeout = setTimeout(function () {
     minerio_img.classList.remove('shake');
