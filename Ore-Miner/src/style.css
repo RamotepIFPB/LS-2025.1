@@ -18,6 +18,25 @@ h1 {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+/*.zoom-fade { 
+  width: 300px;
+}
+
+.zoom-fade:hover {
+  animation: zoomAndFade 1.5s forwards;
+}
+
+@keyframes zoomAndFade {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+} */
+
 .shake {
   animation: shake 0.5s;
 }
@@ -32,18 +51,16 @@ h1 {
 }
 
 #highscore {
-  color: white;
-  margin-top: 150px;  
+  color: white;  
   text-align: center;     
   line-height: 1.6;
 }
 
 #score {
-  color: white;
-  margin-top: 150px;  
+  color: white; 
   text-align: center;     
   line-height: 1.6;
-  display: block;
+  display: none;
 }
 
 body {
@@ -83,4 +100,36 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 100px;
+}
+
+#powerup-1, #pw-1 {
+  background:none;
+  width: 100px;
+}
+
+#powerup-2, #pw-2 {
+  background: none;
+  width: 100px;
+}
+
+#powerup-3, #pw-3 {
+  background:none;
+  width: 100px;
+}
+
+.shop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 75px; /* Espaço entre os botões */
+  padding-top: 50px;
+}
+
+.precos {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px; /* Espaço entre os botões */
+  padding-top: 25px;
 }
