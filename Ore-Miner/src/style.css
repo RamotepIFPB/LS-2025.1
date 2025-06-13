@@ -2,6 +2,17 @@ h1 {
   text-align: center;
   margin-top: 20px; /* Distância do topo, opcional */
   color: white;
+  font-family: "8bit";
+}
+
+@font-face {
+  font-family: "8bit";
+  src: url(Pixellari.ttf);
+}
+
+body {
+  background-image: url(../images/bg.gif);
+  background-size: cover;
 }
 
 @keyframes shake {
@@ -48,12 +59,14 @@ h1 {
   margin: 0 auto;          /* Centraliza horizontalmente */
   text-align: justify;     /* (opcional) deixa o texto justificado */
   line-height: 1.6;        /* Melhora a leitura */
+  font-family: "8bit";
 }
 
 #highscore {
   color: white;  
   text-align: center;     
   line-height: 1.6;
+  font-family: "8bit";
 }
 
 #score {
@@ -61,6 +74,7 @@ h1 {
   text-align: center;     
   line-height: 1.6;
   display: none;
+  font-family: "8bit";
 }
 
 body {
@@ -76,6 +90,7 @@ body {
   font-size: 16px; /* Tamanho da fonte */
   cursor: pointer; /* Cursor de mão ao passar o mouse */
   transition: background-color 0.3s ease; /* Efeito de transição */
+  font-family: "8bit";
 }
 
 #start:hover {
@@ -132,4 +147,5 @@ body {
   align-items: center;
   gap: 70px; /* Espaço entre os botões */
   padding-top: 25px;
+  font-family: "8bit";
 }
