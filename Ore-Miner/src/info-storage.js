@@ -5,7 +5,7 @@ export var speed_preco = 75
 
 export function carregar_Luck(Slot, upgrade) {
     const SlotSelecionado = document.getElementById(Slot)
-    SlotSelecionado.src = "../images/luck.png"
+    SlotSelecionado.src = "../Ore-Miner/images/luck.png"
     if (Slot == "pw-1") {
         const preco = document.getElementById("preco-1")
         const preco_final = luck_preco * upgrade
@@ -25,7 +25,7 @@ export function carregar_Luck(Slot, upgrade) {
 
 export function carregar_Speed(Slot, upgrade) {
     const SlotSelecionado = document.getElementById(Slot)
-    SlotSelecionado.src = "../images/fire.png"
+    SlotSelecionado.src = "../Ore-Miner/images/fire.png"
     if (Slot == "pw-1") {
         const preco = document.getElementById("preco-1")
         const preco_final = speed_preco * upgrade
