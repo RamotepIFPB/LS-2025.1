@@ -1,5 +1,6 @@
 export var luck_preco = 100
 export const valor_minerios = [10, 15, 25]
+export const hp_minerios = [4, 5, 7]
 export var speed_preco = 75
 
 export function carregar_Luck(Slot, upgrade) {
