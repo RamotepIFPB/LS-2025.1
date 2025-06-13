@@ -25,12 +25,12 @@ const highscore = document.getElementById("highscore");
 const minerio = document.getElementById("minerio");
 const minerio_img = document.querySelector("#minerio img");
 const score = document.getElementById("score")
-const lj_img1 = document.getElementById("powerup-1")
-const lj_img2 = document.getElementById("powerup-2")
-const lj_img3 = document.getElementById("powerup-3")
-const lj_bt1 = document.getElementById("pw-1")
-const lj_bt2 = document.getElementById("pw-2")
-const lj_bt3 = document.getElementById("pw-3")
+const lj_bt1 = document.getElementById("powerup-1")
+const lj_bt2 = document.getElementById("powerup-2")
+const lj_bt3 = document.getElementById("powerup-3")
+const lj_img1 = document.getElementById("pw-1")
+const lj_img2 = document.getElementById("pw-2")
+const lj_img3 = document.getElementById("pw-3")
 const lj_pc1 = document.getElementById("preco-1")
 const lj_pc2 = document.getElementById("preco-2")
 const lj_pc3 = document.getElementById("preco-3")
@@ -41,10 +41,18 @@ var m_atual = 3
 var scorenumber = 0
 var HP = 4
 var minerio_atual = "pedra"
+var slot1 = "speed"
+var slot2 = "luck"
+var slot3 = "double"
+var dinheiro = 1000
 import { carregar_Luck } from "./info-storage.js"
 import { carregar_Speed } from "./info-storage.js"
 import { valor_minerios } from "./info-storage.js"
 import { hp_minerios } from "./info-storage.js"
+import { luck_preco } from "./info-storage.js"
+import { speed_preco } from "./info-storage.js"
+var luck_price = Number(luck_preco) * luck_upgrades
+var speed_price = Number(speed_preco) * speed_upgrades
 
 botao.addEventListener("click", function () {
   description.style.display = "none";
@@ -67,21 +75,27 @@ botao.addEventListener("click", function () {
   const upgrade3 = Math.floor(Math.random() * 2) + 1;
   if (upgrade1 == 1) {
     carregar_Luck("pw-1", luck_upgrades)
+    slot1 = "luck"
   }
   if (upgrade1 == 2) {
     carregar_Speed("pw-1", speed_upgrades)
+    slot1 = "speed"
   }
   if (upgrade2 == 1) {
     carregar_Luck("pw-2", luck_upgrades)
+    slot2 = "luck"
   }
   if (upgrade2 == 2) {
     carregar_Speed("pw-2", speed_upgrades)
+    slot2 = "speed"
   }
   if (upgrade3 == 1) {
     carregar_Luck("pw-3", luck_upgrades)
+    slot3 = "luck"
   }
   if (upgrade3 == 2) {
     carregar_Speed("pw-3", speed_upgrades)
+    slot3 = "speed"
   }
   
   setTimeout(function () {
@@ -132,31 +146,31 @@ minerio.addEventListener("click", function () {
       minerio_img.src = "../images/iron.png";
       minerio_atual = "ferro"
       const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 2));
-      HP = durabilidade
+      HP = Math.ceil(durabilidade / speed_upgrades)
     }
     if (ore == 2) {
       minerio_img.src = "../images/coal.png";
       minerio_atual = "carvao"
       const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 1));
-      HP = durabilidade
+      HP = Math.ceil(durabilidade / speed_upgrades)
     }
     if (ore == 3) {
       minerio_img.src = "../images/rock.png";
       minerio_atual = "pedra"
       const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 0));
-      HP = durabilidade
+      HP = Math.ceil(durabilidade / speed_upgrades)
     }
     if (ore == 4) {
       minerio_img.src = "../images/rock.png";
       minerio_atual = "pedra"
       const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 0));
-      HP = durabilidade
+      HP = Math.ceil(durabilidade / speed_upgrades)
     }
     if (ore == 5) {
       minerio_img.src = "../images/rock.png";
       minerio_atual = "pedra"
       const durabilidade = Number(hp_minerios.filter((elemento, indice) => indice == 0));
-      HP = durabilidade
+      HP = Math.ceil(durabilidade / speed_upgrades)
     }
   }
   score.textContent = "SCORE: " + scorenumber;
@@ -173,6 +187,69 @@ minerio.addEventListener("click", function () {
   animationTimeout = setTimeout(function () {
     minerio_img.classList.remove('shake');
   }, 500);
+})
+
+lj_bt1.addEventListener('click', function() {
+  if (slot1 == "luck") {
+    if (dinheiro >= luck_price) {
+      dinheiro = dinheiro - luck_price
+      luck_upgrades = luck_upgrades + 1
+      lj_img1.style.display = "none";
+      lj_bt1.style.display = "none";
+      lj_pc1.style.display = "none";
+    }
+  }
+  if (slot1 == "speed") {
+    if (dinheiro >= speed_price) {
+      dinheiro = dinheiro - speed_price
+      speed_upgrades = speed_upgrades + 1
+      lj_img1.style.display = "none";
+      lj_bt1.style.display = "none";
+      lj_pc1.style.display = "none";
+    }
+  }
+})
+
+lj_bt2.addEventListener('click', function() {
+  if (slot2 == "luck") {
+    if (dinheiro >= luck_price) {
+      dinheiro = dinheiro - luck_price
+      luck_upgrades = luck_upgrades + 1
+      lj_img2.style.display = "none";
+      lj_bt2.style.display = "none";
+      lj_pc2.style.display = "none";
+    }
+  }
+  if (slot2 == "speed") {
+    if (dinheiro >= speed_price) {
+      dinheiro = dinheiro - speed_price
+      speed_upgrades = speed_upgrades + 1
+      lj_img2.style.display = "none";
+      lj_bt2.style.display = "none";
+      lj_pc2.style.display = "none";
+    }
+  }
+})
+
+lj_bt3.addEventListener('click', function() {
+  if (slot3 == "luck") {
+    if (dinheiro >= luck_price) {
+      dinheiro = dinheiro - luck_price
+      luck_upgrades = luck_upgrades + 1
+      lj_img3.style.display = "none";
+      lj_bt3.style.display = "none";
+      lj_pc3.style.display = "none";
+    }
+  }
+  if (slot3 == "speed") {
+    if (dinheiro >= speed_price) {
+      dinheiro = dinheiro - speed_price
+      speed_upgrades = speed_upgrades + 1
+      lj_img3.style.display = "none";
+      lj_bt3.style.display = "none";
+      lj_pc3.style.display = "none";
+    }
+  }
 })
 
 // Testando:
