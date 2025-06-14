@@ -246,18 +246,20 @@ minerio.addEventListener("click", function () {
 
 lj_bt1.addEventListener('click', function() {
   if (slot1 == "luck") {
-    if (dinheiro >= luck_price) {
-      dinheiro = dinheiro - luck_price
-      luck_upgrades = luck_upgrades + 1
+    if (scorenumber >= luck_price) {
+      scorenumber = scorenumber - luck_price;
+      score.textContent = "SCORE: " + scorenumber;
+      luck_upgrades = luck_upgrades + 1;
       lj_img1.style.display = "none";
       lj_bt1.style.display = "none";
       lj_pc1.style.display = "none";
     }
   }
   if (slot1 == "speed") {
-    if (dinheiro >= speed_price) {
-      dinheiro = dinheiro - speed_price
-      speed_upgrades = speed_upgrades + 1
+    if (scorenumber >= speed_price) {
+      scorenumber = scorenumber - speed_price;
+      score.textContent = "SCORE: " + scorenumber;
+      speed_upgrades = speed_upgrades + 1;
       lj_img1.style.display = "none";
       lj_bt1.style.display = "none";
       lj_pc1.style.display = "none";
@@ -267,18 +269,20 @@ lj_bt1.addEventListener('click', function() {
 
 lj_bt2.addEventListener('click', function() {
   if (slot2 == "luck") {
-    if (dinheiro >= luck_price) {
-      dinheiro = dinheiro - luck_price
-      luck_upgrades = luck_upgrades + 1
+    if (scorenumber >= luck_price) {
+      scorenumber = scorenumber - luck_price;
+      score.textContent = "SCORE: " + scorenumber;
+      luck_upgrades = luck_upgrades + 1;
       lj_img2.style.display = "none";
       lj_bt2.style.display = "none";
       lj_pc2.style.display = "none";
     }
   }
   if (slot2 == "speed") {
-    if (dinheiro >= speed_price) {
-      dinheiro = dinheiro - speed_price
-      speed_upgrades = speed_upgrades + 1
+    if (scorenumber >= speed_price) {
+      scorenumber = scorenumber - speed_price;
+      score.textContent = "SCORE: " + scorenumber;
+      speed_upgrades = speed_upgrades + 1;
       lj_img2.style.display = "none";
       lj_bt2.style.display = "none";
       lj_pc2.style.display = "none";
@@ -288,18 +292,20 @@ lj_bt2.addEventListener('click', function() {
 
 lj_bt3.addEventListener('click', function() {
   if (slot3 == "luck") {
-    if (dinheiro >= luck_price) {
-      dinheiro = dinheiro - luck_price
-      luck_upgrades = luck_upgrades + 1
+    if (scorenumber >= luck_price) {
+      scorenumber = scorenumber - luck_price;
+      score.textContent = "SCORE: " + scorenumber;
+      luck_upgrades = luck_upgrades + 1;
       lj_img3.style.display = "none";
       lj_bt3.style.display = "none";
       lj_pc3.style.display = "none";
     }
   }
   if (slot3 == "speed") {
-    if (dinheiro >= speed_price) {
-      dinheiro = dinheiro - speed_price
-      speed_upgrades = speed_upgrades + 1
+    if (scorenumber >= speed_price) {
+      scorenumber = scorenumber - speed_price;
+      score.textContent = "SCORE: " + scorenumber;
+      speed_upgrades = speed_upgrades + 1;
       lj_img3.style.display = "none";
       lj_bt3.style.display = "none";
       lj_pc3.style.display = "none";
